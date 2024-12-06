@@ -14,8 +14,8 @@ current_date = datetime.date.today()
 max_date = current_date + datetime.timedelta(days=120)
 
 def AvailableTrains(start,final,date_user):
-    mn = mysql.connector.connect(host=my_sql_config["host"], user=my_sql_config["user"],
-                                 password=my_sql_config["password"], database=my_sql_config["database"])
+    mn = mysql.connector.connect(host="127.0.0.1", user="host",
+                                 password="Saxena@2004", database="railway")
     cur = mn.cursor()
     cur.execute(
         'SELECT Train_No, Source_Station_Code, Source_Station_Name, Station_Name, Destination_Station_Code, Destination_Station_Name, Arrival_Time, Departure_Time from train_info where Source_Station_Code="{}" AND Destination_Station_Code="{}";'.format(
@@ -40,8 +40,8 @@ def AvailableTrains(start,final,date_user):
     
 
 def CheckFare(start, final):
-    mn = mysql.connector.connect(host=my_sql_config["host"], user=my_sql_config["user"],
-                                 password=my_sql_config["password"], database=my_sql_config["database"])
+    mn = mysql.connector.connect(host="127.0.0.1", user="host",
+                                 password="Saxena@2004", database="railway")
     cur = mn.cursor()
 
     # Execute the SQL query to get the distance and fare information along with station names
@@ -83,8 +83,8 @@ def CheckFare(start, final):
         return fare_info
     
 def ShowBookings(mobile_no):
-    mn = mysql.connector.connect(host=my_sql_config["host"], user=my_sql_config["user"],
-                                 password=my_sql_config["password"], database=my_sql_config["database"])
+    mn = mysql.connector.connect(host="127.0.0.1", user="host",
+                                 password="Saxena@2004", database="railway")
     cur = mn.cursor()
 
     cur.execute('SELECT Train_No, Passenger_Name, Mobile_No, Date_Of_Booking, Booking_ID, Class, Date_Of_Travel FROM bookings WHERE Mobile_No="{}"'.format(mobile_no))
@@ -106,8 +106,8 @@ def ShowBookings(mobile_no):
         return bookings
     
 def BookTrain(train_no, name, mobile, adhaar, booking_class, travel_date):
-    mn = mysql.connector.connect(host=my_sql_config["host"], user=my_sql_config["user"],
-                                 password=my_sql_config["password"], database=my_sql_config["database"])
+    mn = mysql.connector.connect(host="127.0.0.1", user="host",
+                                 password="Saxena@2004", database="railway")
     cur = mn.cursor()
 
     Time_of_Booking = datetime.datetime.now()
@@ -135,8 +135,8 @@ def BookTrain(train_no, name, mobile, adhaar, booking_class, travel_date):
         mn.close()
         
 def CancelBooking(unique_id):
-    mn = mysql.connector.connect(host=my_sql_config["host"], user=my_sql_config["user"],
-                                 password=my_sql_config["password"], database=my_sql_config["database"])
+    mn = mysql.connector.connect(host="127.0.0.1", user="host",
+                                 password="Saxena@2004", database="railway")
     cur = mn.cursor()
 
     # Check if the booking exists

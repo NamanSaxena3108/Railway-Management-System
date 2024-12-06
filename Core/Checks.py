@@ -2,15 +2,14 @@
 import mysql.connector as con
 from mysql.connector.errors import ProgrammingError,Error
 import Core.InsertData as Insert
-import streamlit as st
-my_sql_config = st.secrets["mysql"]
+
 def CheckDatabase():
     print("Checking Database Requirement..")
     db = con.connect(
-        host = my_sql_config["host"],
-        user = my_sql_config["user"],
-        database = my_sql_config[""],
-        password = my_sql_config["password"]
+        host = "127.0.0.1",
+        user = "host",
+        database = "",
+        password = "Saxena@2004"
         )
     cur = db.cursor()
     result = None
@@ -36,10 +35,10 @@ def CheckDatabase():
     db.close()
 
 def CreateTable():
-    db = con.connect(host = my_sql_config["host"],
-    user = my_sql_config["user"],
-    database = my_sql_config["database"],
-    password = my_sql_config["password"]
+    db = con.connect(host = "127.0.0.1",
+    user = "host",
+    database = "railway",
+    password = "Saxena@2004"
         )
     cur = db.cursor()
     cur.execute("create table train_info (Train_No varchar(10) NOT NULL, Station_Code varchar(20) NOT NULL, Station_Name varchar(30) NOT NULL, Arrival_Time varchar(20) NOT NULL, Departure_Time varchar(20) NOT NULL, Distance varchar(10) NOT NULL, Source_Station_Code varchar(20) NOT NULL, Source_Station_Name varchar(70) NOT NULL, Destination_Station_Code varchar(20) NOT NULL, Destination_Station_Name varchar(60) NOT NULL);")
@@ -53,10 +52,10 @@ def CheckConnection():
     try:
         print("Checking the Connection to the MySQL Server..")
         connection = con.connect(
-            host = my_sql_config["host"],
-            user = my_sql_config["user"],
-            database = my_sql_config["database"],
-            password = my_sql_config["password"])
+            host = "127.0.0.1",
+            user = "host",
+            database = "railway",
+            password = "Saxena@2004")
         if connection.is_connected():
             db_Info = connection.get_server_info()
             print("Connected to MySQL Server Version", db_Info)
