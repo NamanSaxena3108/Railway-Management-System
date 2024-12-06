@@ -1,0 +1,7 @@
+streamlit
+pandas
+mysql.connector
+datetime
+random
+csv
+Core
