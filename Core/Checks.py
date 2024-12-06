@@ -6,10 +6,10 @@ import Core.InsertData as Insert
 def CheckDatabase():
     print("Checking Database Requirement..")
     db = con.connect(
-        host = "127.0.0.1",
-        user = "root",
+        host = Host_address,
+        user = Your User Name,
         database = "",
-        password = "Saxena@2004"
+        password = Your password
         )
     cur = db.cursor()
     result = None
@@ -35,10 +35,10 @@ def CheckDatabase():
     db.close()
 
 def CreateTable():
-    db = con.connect(host = "127.0.0.1",
-    user = "root",
+    db = con.connect(host = Host_address,
+    user = Your User Name,
     database = "railway",
-    password = "Saxena@2004"
+    password = Your password
         )
     cur = db.cursor()
     cur.execute("create table train_info (Train_No varchar(10) NOT NULL, Station_Code varchar(20) NOT NULL, Station_Name varchar(30) NOT NULL, Arrival_Time varchar(20) NOT NULL, Departure_Time varchar(20) NOT NULL, Distance varchar(10) NOT NULL, Source_Station_Code varchar(20) NOT NULL, Source_Station_Name varchar(70) NOT NULL, Destination_Station_Code varchar(20) NOT NULL, Destination_Station_Name varchar(60) NOT NULL);")
@@ -52,10 +52,10 @@ def CheckConnection():
     try:
         print("Checking the Connection to the MySQL Server..")
         connection = con.connect(
-            host = "127.0.0.1",
-            user = "root",
+            host = Host_address,
+            user = Your User Name,
             database = "railway",
-            password = "Saxena@2004")
+            password = Your password)
         if connection.is_connected():
             db_Info = connection.get_server_info()
             print("Connected to MySQL Server Version", db_Info)

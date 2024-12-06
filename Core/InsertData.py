@@ -3,10 +3,10 @@ import csv
 import mysql.connector as con
 
 def InsertTrainData():
-    mn = con.connect(host = "127.0.0.1",
-                user = "root",
+    mn = con.connect(host = Host_address,
+                user = Your User Name,
                 database = "railway",
-                password = "Saxena@2004")
+                password = Your password)
 
     cur = mn.cursor()
     # This is used to iterate through all the data in the csv file and inser them in the database
