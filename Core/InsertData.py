@@ -4,7 +4,7 @@ import mysql.connector as con
 
 def InsertTrainData():
     mn = con.connect(host = "127.0.0.1",
-                user = "host",
+                user = "root",
                 database = "railway",
                 password = "Saxena@2004")
 

@@ -14,7 +14,7 @@ current_date = datetime.date.today()
 max_date = current_date + datetime.timedelta(days=120)
 
 def AvailableTrains(start,final,date_user):
-    mn = mysql.connector.connect(host="127.0.0.1", user="host",
+    mn = mysql.connector.connect(host="127.0.0.1", user="root",
                                  password="Saxena@2004", database="railway")
     cur = mn.cursor()
     cur.execute(
@@ -40,7 +40,7 @@ def AvailableTrains(start,final,date_user):
     
 
 def CheckFare(start, final):
-    mn = mysql.connector.connect(host="127.0.0.1", user="host",
+    mn = mysql.connector.connect(host="127.0.0.1", user="root",
                                  password="Saxena@2004", database="railway")
     cur = mn.cursor()
 
@@ -83,7 +83,7 @@ def CheckFare(start, final):
         return fare_info
     
 def ShowBookings(mobile_no):
-    mn = mysql.connector.connect(host="127.0.0.1", user="host",
+    mn = mysql.connector.connect(host="127.0.0.1", user="root",
                                  password="Saxena@2004", database="railway")
     cur = mn.cursor()
 
@@ -106,7 +106,7 @@ def ShowBookings(mobile_no):
         return bookings
     
 def BookTrain(train_no, name, mobile, adhaar, booking_class, travel_date):
-    mn = mysql.connector.connect(host="127.0.0.1", user="host",
+    mn = mysql.connector.connect(host="127.0.0.1", user="root",
                                  password="Saxena@2004", database="railway")
     cur = mn.cursor()
 
@@ -135,7 +135,7 @@ def BookTrain(train_no, name, mobile, adhaar, booking_class, travel_date):
         mn.close()
         
 def CancelBooking(unique_id):
-    mn = mysql.connector.connect(host="127.0.0.1", user="host",
+    mn = mysql.connector.connect(host="127.0.0.1", user="root",
                                  password="Saxena@2004", database="railway")
     cur = mn.cursor()
 

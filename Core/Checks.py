@@ -7,7 +7,7 @@ def CheckDatabase():
     print("Checking Database Requirement..")
     db = con.connect(
         host = "127.0.0.1",
-        user = "host",
+        user = "root",
         database = "",
         password = "Saxena@2004"
         )
@@ -36,7 +36,7 @@ def CheckDatabase():
 
 def CreateTable():
     db = con.connect(host = "127.0.0.1",
-    user = "host",
+    user = "root",
     database = "railway",
     password = "Saxena@2004"
         )
@@ -53,13 +53,14 @@ def CheckConnection():
         print("Checking the Connection to the MySQL Server..")
         connection = con.connect(
             host = "127.0.0.1",
-            user = "host",
+            user = "root",
             database = "railway",
             password = "Saxena@2004")
         if connection.is_connected():
             db_Info = connection.get_server_info()
             print("Connected to MySQL Server Version", db_Info)
-    except Error:
+    except Error as e:
+        print(e)
         print("Error connecting to MySQL Server, Make sure the MySQL Server is running and then try again!")
         print("Exiting!")
         return False
