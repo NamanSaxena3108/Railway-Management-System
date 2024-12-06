@@ -4,4 +4,7 @@ mysql-connector-python
 datetime
 random
 csv
-Core
+Core.Checks
+Core.InsertData
+Core.User_function
+mysql.connector
