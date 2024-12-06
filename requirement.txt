@@ -1,6 +1,6 @@
 streamlit
 pandas
-mysql.connector
+mysql-connector-python
 datetime
 random
 csv
