@@ -1,12 +1,15 @@
 # This module is used to load the data in the MySQL Database
 import csv
 import mysql.connector as con
+import streamlit as st
+
+my_sql_config = st.secrests["mysql"]
 
 def InsertTrainData():
-    mn = con.connect(host = "127.0.0.1",
-                user = "root",
-                database = "railway",
-                password = "Saxena@2004")
+    mn = con.connect(host = my_sql_config["host"],
+                user = my_sql_config["user"],
+                database = my_sql_config["database"],
+                password = my_sql_config["password"])
 
     cur = mn.cursor()
     # This is used to iterate through all the data in the csv file and inser them in the database
