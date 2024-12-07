@@ -34,7 +34,6 @@ The system uses a MySQL database with the following tables:
     - `Checks.py`: Contains functions that verify the requirements of the project.
     - `InsertData.py`: Contains functions to insert the data into the MySQL tables.
     - `User _Functions.py`: Contains functions that allow a user to perform certain tasks.
-    - `Other.py`: Contains some commonly used functions.
 
 ### Installation
 1. Ensure you have Python installed on your system.
@@ -42,7 +41,7 @@ The system uses a MySQL database with the following tables:
    ```bash
    pip install streamlit mysql-connector-python
 3. Set up a MySQL database and create the necessary tables as described above.
-4. To stop use 'Ctrl + c'
+4. To stop use `Ctrl + c`
 
 ### Usage
 1. Run the application using Streamlit:
