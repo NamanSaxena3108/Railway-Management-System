@@ -39,7 +39,7 @@ The system uses a MySQL database with the following tables:
 1. Ensure you have Python installed on your system.
 2. Install the required packages using pip:
    ```bash
-   pip install streamlit mysql-connector-python
+   pip install requirement.txt
 3. Set up a MySQL database and create the necessary tables as described above.
 4. To stop use `Ctrl + c`
 
