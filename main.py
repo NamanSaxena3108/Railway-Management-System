@@ -129,7 +129,7 @@ elif choice == "About":
     ### License
     This project is licensed under the MIT License.      
     """)
-    st.write("""# Copyright (c) 2024 Naman Saxena""")
+    st.write("""### Copyright (c) 2024 Naman Saxena""")
 
 # Initialize a session state variable to track exit button click
 if 'exit_clicked' not in st.session_state:
